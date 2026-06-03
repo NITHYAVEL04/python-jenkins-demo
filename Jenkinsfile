@@ -29,16 +29,16 @@ pipeline {
             sh '''
             echo $PASS | docker login -u $USER --password-stdin
             
-            // Highlight-start: Change 'reshma0209' to your login username 'nithya65'
-            docker build -t nithya65/python-project:${BUILD_NUMBER} app/
-            docker tag nithya65/python-project:${BUILD_NUMBER} nithya65/python-project:latest
-            docker push nithya65/python-project:${BUILD_NUMBER}
-            docker push nithya65/python-project:latest
-            // Highlight-end
-            '''
+           
+            docker build -t nithya65/python-jenkins-demo:${BUILD_NUMBER} app/
+            docker tag nithya65/python-jenkins-demo:${BUILD_NUMBER} nithya65/python-jenkins-demo:latest
+            docker push nithya65/python-jenkins-demo:${BUILD_NUMBER}
+            docker push nithya65/python-jenkins-demo:latest
+            
         }
     }
 }
+       
         stage('Deploy') {
             steps {
                 echo "🚀 Deploy step (optional)"
