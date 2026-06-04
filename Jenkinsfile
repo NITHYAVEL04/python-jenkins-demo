@@ -55,7 +55,7 @@ pipeline {
             echo "✅ Success: $DOCKER_HUB/$IMAGE_NAME:$BUILD_TAG"
         }
         failure {
-            echo "❌ Failed"
+            echo "❌ Execution Failed"
         }
     }
 }
